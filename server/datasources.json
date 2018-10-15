@@ -2,12 +2,12 @@
   "db": {
     "host": "localhost",
     "port": 27017,
-    "url": "mongodb://localhost:27017/Movies",
-    "database": "Movies",
-    "password": "",
+    "url": "mongodb://tproctor_heroku_1:movienight121!@ds047207.mlab.com:47207/heroku_qhnf60xs",
+    "database": "movies",
+    "password": "movienight121!",
     "name": "db",
-    "user": "",
-    "connector": "mongodb",
+    "user": "tproctor_heroku_1",
+    "connector": "loopback-connector-mongodb",
     "useNewUrlParser":"true"
   }
 }
