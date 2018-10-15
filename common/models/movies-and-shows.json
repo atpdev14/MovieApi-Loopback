@@ -1,0 +1,75 @@
+{
+  "name": "moviesAndShows",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number"
+    },
+    "nominations": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "duration": {
+      "type": "number"
+    },
+    "genre1": {
+      "type": "string"
+    },
+    "genre2": {
+      "type": "string"
+    },
+    "release": {
+      "type": "string"
+    },
+    "metacritic": {
+      "type": "number"
+    },
+    "synopsis": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "movieById": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [],
+      "description": "Return a movie matching the id entered in the endpoint.",
+      "http": [
+        {
+          "path": "/movie/:id",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}
