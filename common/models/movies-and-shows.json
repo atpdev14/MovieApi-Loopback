@@ -53,23 +53,5 @@
   "relations": {},
   "acls": [],
   "methods": {
-    "movieById": {
-      "accepts": [
-        {
-          "arg": "id",
-          "type": "string",
-          "required": true,
-          "description": ""
-        }
-      ],
-      "returns": [],
-      "description": "Return a movie matching the id entered in the endpoint.",
-      "http": [
-        {
-          "path": "/movie/:id",
-          "verb": "get"
-        }
-      ]
-    }
   }
 }

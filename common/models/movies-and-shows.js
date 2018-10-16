@@ -5,14 +5,15 @@ module.exports = function(Moviesandshows) {
 	//				Find movie by ID
 	//========================================================
 	Moviesandshows.remoteMethod("findMovieById", {
-		accepts: {arg: 'id', type: 'string', required: true},
-		http: {path: '/movie/:id', verb: 'get'},
+		accepts: {arg: 'movieId', type: 'string', required: true},
+		isStatic: true,
+		http: {path: '/movieId/:movieId', verb: 'get'},
 		returns: {arg: 'name', type: 'object'}
 	});
 
-	Moviesandshows.findMovieById = function(id, callback){
-		Moviesandshows.findOne({where: {id: id, type: 'movie'}}, function(err, data){
-			callback(null, data);			
+	Moviesandshows.findMovieById = function(movieId, callback){
+		Moviesandshows.findOne({where: {id: movieId, type: 'movie'}}, function(err, data){
+			callback(null, data);			 
 		})
 	};
 
@@ -21,13 +22,13 @@ module.exports = function(Moviesandshows) {
 	//				Find show by ID
 	//========================================================
 	Moviesandshows.remoteMethod("findShowById", {
-		accepts: {arg: 'id', type: 'string', required: true},
-		http: {path: '/show/:id', verb: 'get'},
+		accepts: {arg: 'showId', type: 'string', required: true},
+		http: {path: '/showId/:showId', verb: 'get'},
 		returns: {arg: 'name', type: 'object'}
 	});
 
-	Moviesandshows.findShowById = function(id, callback){
-		Moviesandshows.findOne({where: {id: id, type: 'show'}}, function(err, data){
+	Moviesandshows.findShowById = function(showId, callback){
+		Moviesandshows.findOne({where: {id: showId, type: 'show'}}, function(err, data){
 			callback(null, data)
 		})
 	};
@@ -48,6 +49,7 @@ module.exports = function(Moviesandshows) {
 		})
 	};
 };
+
 
 
 
